@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { Generation, List } from '../models/generation';
+import { Generation, GenerationList } from '../models/generation';
 import { handleError } from 'src/app/utils';
 
 @Injectable({
@@ -14,9 +14,9 @@ export class GenerationService {
 
   constructor(private http: HttpClient) {}
 
-  public list(): Observable<List> {
+  public list(): Observable<GenerationList> {
     return this.http
-      .get<List>(`${this.baseURL}/generation`)
+      .get<GenerationList>(`${this.baseURL}/generation`)
       .pipe(catchError(handleError));
   }
 

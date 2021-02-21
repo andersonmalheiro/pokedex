@@ -1,28 +1,29 @@
-interface Result {
+export interface GenerationResult {
   name: string;
   url: string;
+  id?: number;
 }
 
 interface Language {
-  language: Result;
+  language: GenerationResult;
   name: string;
 }
 
 export interface Generation {
   abilities: any[];
   id: number;
-  main_region: Result;
-  moves: Result[];
+  main_region: GenerationResult;
+  moves: GenerationResult[];
   name: string;
   names: Language[];
-  pokemon_species: Result[];
-  types: Result[];
-  version_groups: Result[];
+  pokemon_species: GenerationResult[];
+  types: GenerationResult[];
+  version_groups: GenerationResult[];
 }
 
-export interface List {
+export interface GenerationList {
   count: number;
   next: boolean;
   previous: boolean;
-  results: Result[];
+  results: GenerationResult[];
 }
