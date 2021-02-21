@@ -1,4 +1,30 @@
 <div class="container">
   <app-navbar></app-navbar>
-  <main></main>
+  <main class="main">
+    <div class="flex-row align-center space-between">
+      <h1>Generations</h1>
+      <button class="ghost-btn" (click)="loadData()">
+        <i class="gg-sync"></i>
+      </button>
+    </div>
+    <ng-container *ngIf="!loading && data && data?.length">
+      <ul class="generations-grid">
+        <li *ngFor="let item of data">
+          <a class="generation-card" [routerLink]="['/generation/', item?.id]">
+            <span class="title" [innerText]="item?.name"></span>
+          </a>
+        </li>
+      </ul>
+    </ng-container>
+    <ng-container *ngIf="loading">
+      <div class="loading-container">
+        <i class="gg-spinner"></i>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="(!loading && !data) || (data && !data?.length)">
+      <div class="loading-container">
+        <p>No generations found...</p>
+      </div>
+    </ng-container>
+  </main>
 </div>
