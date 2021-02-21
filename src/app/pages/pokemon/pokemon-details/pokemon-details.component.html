@@ -1,0 +1,64 @@
+<div class="container" [ngClass]="specie?.color?.name || ''">
+  <div class="pokemon-header">
+    <div class="flex-row align-center">
+      <img
+        class="pokemon-img"
+        [src]="pokemon?.sprites?.front_default"
+        alt="pokemon"
+      />
+      <h1 class="name" [innerText]="pokemon?.name"></h1>
+    </div>
+
+    <h1>#{{ pokemon?.id }}</h1>
+  </div>
+
+  <section class="details-grid">
+    <div class="flex-column">
+      <h4 class="section-title">Info</h4>
+      <div class="pokemon-info">
+        <ul class="details">
+          <li>
+            <span class="label">Base XP:</span>
+            <span class="value" [innerText]="pokemon?.base_experience || '---'"></span>
+          </li>
+          <li>
+            <span class="label">Height:</span>
+            <span class="value" [innerText]="pokemon?.height + 'm' || '---'"></span>
+          </li>
+          <li>
+            <span class="label">Growth rate:</span>
+            <span class="value" [innerText]="specie?.growth_rate?.name || '---'"></span>
+          </li>
+          <li>
+            <span class="label">Weight:</span>
+            <span class="value" [innerText]="pokemon?.weight + 'kg' || '---'"></span>
+          </li>
+          <li>
+            <span class="label">Baby:</span>
+            <span class="value" [innerText]="specie?.is_baby ? 'Yes' : 'No'"></span>
+          </li>
+          <li>
+            <span class="label">Legendary:</span>
+            <span class="value" [innerText]="specie?.is_legendary ? 'Yes' : 'No'"></span>
+          </li>
+          <li>
+            <span class="label">Mythical:</span>
+            <span class="value" [innerText]="specie?.is_mythical ? 'Yes' : 'No'"></span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="flex-column">
+      <h4 class="section-title">Stats</h4>
+      <ul class="stats">
+        <li class="bar-wrapper" *ngFor="let stat of pokemon?.stats">
+          <span class="label" [innerText]="stat?.stat?.name"></span>
+          <div class="bar">
+            <div class="progress" [style.width]="stat?.base_stat + '%'"></div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+</div>

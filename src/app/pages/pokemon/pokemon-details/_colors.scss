@@ -1,0 +1,175 @@
+.yellow {
+  border: 2px solid #ffeb3b;
+  background: #ffeb3b;
+
+  .pokemon-header {
+    background: #ffeb3b;
+    color: #000;
+  }
+
+  .progress {
+    background: #ffeb3b;
+  }
+}
+
+.black {
+  border: 2px solid #333;
+  background: #333;
+
+  .pokemon-header {
+    background: #333;
+    color: #fff;
+
+    .pokemon-img {
+      border: 4px solid #fff;
+    }
+  }
+
+  .progress {
+    background: #333;
+  }
+}
+
+.red {
+  border: 2px solid #f44336;
+  background: #f44336;
+
+  .pokemon-header {
+    background: #f44336;
+    color: #fff;
+
+    .pokemon-img {
+      border: 4px solid #fff;
+    }
+  }
+
+  .progress {
+    background: #f44336;
+  }
+}
+
+.green {
+  border: 2px solid #8bc34a;
+  background: #8bc34a;
+
+  .pokemon-header {
+    background: #8bc34a;
+    color: #fff;
+
+    .pokemon-img {
+      border: 4px solid #fff;
+    }
+  }
+
+  .progress {
+    background: #8bc34a;
+  }
+}
+
+.blue {
+  border: 2px solid #2196f3;
+  background: #2196f3;
+
+  .pokemon-header {
+    background: #2196f3;
+    color: #fff;
+
+    .pokemon-img {
+      border: 4px solid #fff;
+    }
+  }
+
+  .progress {
+    background: #2196f3;
+  }
+}
+
+.brown {
+  border: 2px solid #795548;
+  background: #795548;
+
+  .pokemon-header {
+    background: #795548;
+    color: #fff;
+
+    .pokemon-img {
+      border: 4px solid #fff;
+    }
+  }
+
+  .progress {
+    background: #795548;
+  }
+}
+
+.purple {
+  border: 2px solid #9c27b0;
+  background: #9c27b0;
+
+  .pokemon-header {
+    background: #9c27b0;
+    color: #fff;
+
+    .pokemon-img {
+      border: 4px solid #fff;
+    }
+  }
+
+  .progress {
+    background: #9c27b0;
+  }
+}
+
+.gray {
+  border: 2px solid #9e9e9e;
+  background: #9e9e9e;
+
+  .pokemon-header {
+    background: #9e9e9e;
+    color: #000;
+
+    .pokemon-img {
+      border: 4px solid #000;
+    }
+  }
+
+  .progress {
+    background: #9e9e9e;
+  }
+}
+
+.pink {
+  border: 2px solid #f06292;
+  background: #f06292;
+
+  .pokemon-header {
+    background: #f06292;
+    color: #fff;
+
+    .pokemon-img {
+      border: 4px solid #fff;
+    }
+  }
+
+  .progress {
+    background: #f06292;
+  }
+}
+
+.white {
+  border: 2px solid #555;
+  background: #ececec;
+
+  .pokemon-header {
+    background: #ececec;
+    color: #555;
+
+    .pokemon-img {
+      border: 4px solid #555;
+    }
+  }
+
+  .progress {
+    background: #555;
+  }
+}
