@@ -13,13 +13,13 @@
     </li>
   </ul>
 </ng-container>
+
 <ng-container *ngIf="loading">
-  <div class="loading-container">
-    <i class="gg-spinner"></i>
-  </div>
+  <app-loading-indicator></app-loading-indicator>
 </ng-container>
+
 <ng-container *ngIf="(!loading && !data) || (data && !data?.length)">
-  <div class="loading-container">
-    <p>No generations found...</p>
-  </div>
+  <app-empty-indicator
+    [message]="'No generations found...'"
+  ></app-empty-indicator>
 </ng-container>
