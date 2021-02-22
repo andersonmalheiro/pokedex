@@ -1,3 +1,30 @@
-<p>
-  pokemon-list works!
-</p>
+<div class="flex-row align-center space-between">
+  <h1>Pokémon</h1>
+  <button class="ghost-btn" (click)="loadData({})">
+    <i class="gg-sync"></i>
+  </button>
+</div>
+
+<ul class="pokemon-grid" #pokemonList>
+  <ng-container *ngIf="!loading && data && data?.length">
+    <li *ngFor="let item of data">
+      <a class="pokemon-card" [routerLink]="['/pokemon', item?.id]">
+        <span class="title" [innerText]="item?.name"></span>
+      </a>
+    </li>
+  </ng-container>
+
+  <div class="infinty-loading" *ngIf="!loading && infinityLoading">
+    <i class="gg-spinner"></i>
+  </div>
+</ul>
+
+<ng-container *ngIf="loading">
+  <app-loading-indicator></app-loading-indicator>
+</ng-container>
+
+<ng-container *ngIf="(!loading && !data) || (data && !data?.length)">
+  <app-empty-indicator
+    [message]="'No pokémon found...'"
+  ></app-empty-indicator>
+</ng-container>
