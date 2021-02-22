@@ -20,8 +20,8 @@ export interface Pokemon {
 
 export interface PokemonList {
   count: number;
-  next: string;
-  previous: string;
+  next: string | null;
+  previous: string | null;
   results: PokemonResult[];
 }
 

@@ -23,7 +23,7 @@ export interface Generation {
 
 export interface GenerationList {
   count: number;
-  next: string;
-  previous: string;
+  next: string | null;
+  previous: string | null;
   results: GenerationResult[];
 }
