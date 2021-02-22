@@ -6,6 +6,11 @@ import {catchError} from 'rxjs/operators';
 import {Generation, GenerationList} from '../models/generation';
 import {handleError} from 'src/app/utils';
 
+interface GenerationListParams {
+  offset?: number;
+  limit?: number;
+}
+
 @Injectable({
   providedIn: 'root',
 })
@@ -14,9 +19,11 @@ export class GenerationService {
 
   constructor(private http: HttpClient) {}
 
-  public list(): Observable<GenerationList> {
+  public list(filters?: GenerationListParams): Observable<GenerationList> {
     return this.http
-      .get<GenerationList>(`${this.baseURL}/generation`)
+      .get<GenerationList>(`${this.baseURL}/generation`, {
+        params: filters as any,
+      })
       .pipe(catchError(handleError));
   }
 
