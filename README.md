@@ -1,27 +1,67 @@
 # Pokedex
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.1.
+## Descrição
 
-## Development server
+Projeto criado utilizando:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- Angular 11;
+- Sass;
+- Google Typescript styleguide | Lint (gts);
+- Testes com jasmine;
+- Docker.
 
-## Code scaffolding
+## Instruções
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Para executar o projeto em modo de desenvolvimento, execute o seguinte comando:
 
-## Build
+```bash
+npm start
+# ou
+yarn start
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+O projeto será ficará disponível no endereço [http://localhost:4200](http://localhost:4200).
 
-## Running unit tests
+Para executar uma build de produção, utilize os seguintes comandos:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+npm run build
+# ou
+yarn build
+```
 
-## Running end-to-end tests
+## Lint
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Para executar o lint utilize o seguinte comando:
 
-## Further help
+```bash
+npm run lint
+# ou
+yarn lint
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+e para corrigir possíveis problemas use o comando:
+
+```bash
+npm run fix
+# ou
+yarn fix
+```
+
+## Testes
+
+Para executar os testes unitários, utilize os seguintes comandos:
+
+```bash
+npm run test
+# ou
+yarn test
+```
+
+## Docker
+
+Para executar o projeto utilizando o Docker, execute o seguinte comando:
+
+```bash
+docker-compose up
+```
