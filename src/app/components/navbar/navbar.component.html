@@ -1,9 +1,10 @@
 <div class="navbar">
   <div class="navbar__left-container">
-    <a class="link" href="/">
+    <a class="link" [routerLink]="['/']">
       <img class="logo" src="/assets/svg/pokemon.svg" alt="logo" />
     </a>
 
-    <a class="link" href="/pokemon">Pokémon</a>
+    <a class="link" [routerLink]="['/']">Home</a>
+    <a class="link" [routerLink]="['/pokemon']">Pokémon</a>
   </div>
 </div>

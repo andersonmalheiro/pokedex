@@ -3,9 +3,10 @@ import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './navbar';
 import { LoadingIndicatorComponent } from './loading-indicator/loading-indicator.component';
 import { EmptyIndicatorComponent } from './empty-indicator/empty-indicator.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   declarations: [
     NavbarComponent,
     LoadingIndicatorComponent,
