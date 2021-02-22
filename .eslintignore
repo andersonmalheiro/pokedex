@@ -3,3 +3,4 @@ build/
 *.conf.ts
 *.spec.js
 *.spec.tsx
+dist/
