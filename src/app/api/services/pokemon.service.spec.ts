@@ -3,12 +3,12 @@
 import {TestBed, inject} from '@angular/core/testing';
 import {PokemonService} from './pokemon.service';
 import {HttpClientModule} from '@angular/common/http';
-import {Pokemon, PokemonList} from '../models/pokemon';
+import {PokemonList} from '../models/pokemon';
 import {
   HttpClientTestingModule,
   HttpTestingController,
 } from '@angular/common/http/testing';
-import {HttpClient, HttpErrorResponse} from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
 
 describe('Service: Pokemon', () => {
   let service: PokemonService;
