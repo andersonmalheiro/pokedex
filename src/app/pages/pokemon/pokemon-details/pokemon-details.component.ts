@@ -11,9 +11,9 @@ import { extractId } from 'src/app/utils';
   styleUrls: ['./pokemon-details.component.scss'],
 })
 export class PokemonDetailsComponent implements OnInit {
-  public pokemon!: Pokemon;
+  public pokemon?: Pokemon;
 
-  public specie!: PokemonSpecie;
+  public specie?: PokemonSpecie;
 
   public loading = false;
 
@@ -52,13 +52,13 @@ export class PokemonDetailsComponent implements OnInit {
                 this.loading = false;
               }
             } else {
-              this.pokemon = {} as any;
+              this.pokemon = undefined;
             }
           },
           (err) => {
             this.loading = false;
             this.error = err;
-            this.pokemon = {} as any;
+            this.pokemon = undefined;
           }
         );
     } else {

@@ -10,7 +10,7 @@ import { GenerationService } from 'src/app/api/services';
   styleUrls: ['./generation.component.scss'],
 })
 export class GenerationComponent implements OnInit {
-  public data!: Generation;
+  public data?: Generation;
 
   public loading = false;
 
@@ -53,13 +53,13 @@ export class GenerationComponent implements OnInit {
                 specie.id = Number(id);
               });
             } else {
-              this.data = {} as any;
+              this.data = undefined;
             }
           },
           (err) => {
             this.loading = false;
             this.error = err;
-            this.data = {} as any;
+            this.data = undefined;
           }
         );
     } else {
