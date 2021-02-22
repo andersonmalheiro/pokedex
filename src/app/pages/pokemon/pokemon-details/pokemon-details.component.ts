@@ -37,7 +37,6 @@ export class PokemonDetailsComponent implements OnInit {
         .pipe(take(1))
         .subscribe(
           (response) => {
-            this.loading = false;
             this.error = undefined;
 
             if (response) {
@@ -49,6 +48,8 @@ export class PokemonDetailsComponent implements OnInit {
 
               if (specieId) {
                 this.loadSpecieData(specieId);
+              } else {
+                this.loading = false;
               }
             } else {
               this.pokemon = {} as any;
@@ -71,9 +72,12 @@ export class PokemonDetailsComponent implements OnInit {
       .pipe(take(1))
       .subscribe(
         (response) => {
+          this.loading = false;
           this.specie = response;
         },
-        (err) => {}
+        () => {
+          this.loading = false;
+        }
       );
   }
 }
