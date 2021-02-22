@@ -1,9 +1,7 @@
 /* tslint:disable:no-unused-variable */
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { GenerationListComponent } from './generation-list.component';
+import {GenerationListComponent} from './generation-list.component';
 
 describe('GenerationListComponent', () => {
   let component: GenerationListComponent;
@@ -11,9 +9,8 @@ describe('GenerationListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GenerationListComponent ]
-    })
-    .compileComponents();
+      declarations: [GenerationListComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

@@ -1,10 +1,10 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { environment } from 'src/environments/environment';
-import { Observable } from 'rxjs';
-import { catchError } from 'rxjs/operators';
-import { Pokemon, PokemonList, PokemonSpecie } from '../models/pokemon';
-import { handleError } from 'src/app/utils';
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {environment} from 'src/environments/environment';
+import {Observable} from 'rxjs';
+import {catchError} from 'rxjs/operators';
+import {Pokemon, PokemonList, PokemonSpecie} from '../models/pokemon';
+import {handleError} from 'src/app/utils';
 
 interface PokemonListParams {
   offset?: number;
@@ -21,7 +21,7 @@ export class PokemonService {
 
   public list(filters: PokemonListParams): Observable<PokemonList> {
     return this.http
-      .get<PokemonList>(`${this.baseURL}/pokemon`, { params: filters as any })
+      .get<PokemonList>(`${this.baseURL}/pokemon`, {params: filters as any})
       .pipe(catchError(handleError));
   }
 

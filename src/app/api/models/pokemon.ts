@@ -98,7 +98,7 @@ interface Versions {
   'generation-iii': GenerationIii;
   'generation-iv': GenerationIv;
   'generation-v': GenerationV;
-  'generation-vi': { [key: string]: GenerationVi };
+  'generation-vi': {[key: string]: GenerationVi};
   'generation-vii': GenerationVii;
   'generation-viii': GenerationViii;
 }

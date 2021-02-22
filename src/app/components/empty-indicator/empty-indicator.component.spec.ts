@@ -1,9 +1,6 @@
 /* tslint:disable:no-unused-variable */
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
-
-import { EmptyIndicatorComponent } from './empty-indicator.component';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import {EmptyIndicatorComponent} from './empty-indicator.component';
 
 describe('EmptyIndicatorComponent', () => {
   let component: EmptyIndicatorComponent;
@@ -11,9 +8,8 @@ describe('EmptyIndicatorComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EmptyIndicatorComponent ]
-    })
-    .compileComponents();
+      declarations: [EmptyIndicatorComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

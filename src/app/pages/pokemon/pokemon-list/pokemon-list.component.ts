@@ -3,13 +3,13 @@ import {
   Component,
   ElementRef,
   OnInit,
-  ViewChild
+  ViewChild,
 } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
-import { debounceTime, take } from 'rxjs/operators';
-import { PokemonResult } from 'src/app/api/models/pokemon';
-import { PokemonService } from 'src/app/api/services/pokemon.service';
-import { extractId } from 'src/app/utils';
+import {BehaviorSubject} from 'rxjs';
+import {debounceTime, take} from 'rxjs/operators';
+import {PokemonResult} from 'src/app/api/models/pokemon';
+import {PokemonService} from 'src/app/api/services/pokemon.service';
+import {extractId} from 'src/app/utils';
 
 interface LoadDataParams {
   firstTime?: boolean;
@@ -23,7 +23,7 @@ interface LoadDataParams {
   styleUrls: ['./pokemon-list.component.scss'],
 })
 export class PokemonListComponent implements OnInit, AfterViewInit {
-  @ViewChild('pokemonList', { static: false })
+  @ViewChild('pokemonList', {static: false})
   private listRef!: ElementRef<HTMLDivElement>;
 
   public data!: PokemonResult[];
@@ -47,14 +47,14 @@ export class PokemonListComponent implements OnInit, AfterViewInit {
   ngOnInit() {
     this.loadData({});
 
-    this.scrollBehavior$.pipe(debounceTime(500)).subscribe((e) => {
+    this.scrollBehavior$.pipe(debounceTime(500)).subscribe(() => {
       this.scroll(this.listRef);
     });
   }
 
   ngAfterViewInit(): void {
     setTimeout(() => {
-      this.listRef.nativeElement.addEventListener('scroll', (e) => {
+      this.listRef.nativeElement.addEventListener('scroll', e => {
         this.onScroll(e);
       });
     });
@@ -87,15 +87,15 @@ export class PokemonListComponent implements OnInit, AfterViewInit {
       .list(params)
       .pipe(take(1))
       .subscribe(
-        (response) => {
+        response => {
           this.loading = false;
           this.infinityLoading = false;
           this.error = undefined;
           this.next = !!response.next;
 
           if (response.results && response.results.length) {
-            response.results.forEach((pokemon) => {
-              const { url } = pokemon;
+            response.results.forEach(pokemon => {
+              const {url} = pokemon;
               const id = extractId(url);
               if (id) {
                 pokemon.id = id;
@@ -113,7 +113,7 @@ export class PokemonListComponent implements OnInit, AfterViewInit {
             this.data = [];
           }
         },
-        (err) => {
+        err => {
           this.loading = false;
           this.infinityLoading = false;
           this.data = [];

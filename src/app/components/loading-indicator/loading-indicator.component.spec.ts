@@ -1,9 +1,6 @@
 /* tslint:disable:no-unused-variable */
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
-
-import { LoadingIndicatorComponent } from './loading-indicator.component';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import {LoadingIndicatorComponent} from './loading-indicator.component';
 
 describe('LoadingIndicatorComponent', () => {
   let component: LoadingIndicatorComponent;
@@ -11,9 +8,8 @@ describe('LoadingIndicatorComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LoadingIndicatorComponent ]
-    })
-    .compileComponents();
+      declarations: [LoadingIndicatorComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

@@ -1,10 +1,10 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { environment } from 'src/environments/environment';
-import { Observable } from 'rxjs';
-import { catchError } from 'rxjs/operators';
-import { Generation, GenerationList } from '../models/generation';
-import { handleError } from 'src/app/utils';
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {environment} from 'src/environments/environment';
+import {Observable} from 'rxjs';
+import {catchError} from 'rxjs/operators';
+import {Generation, GenerationList} from '../models/generation';
+import {handleError} from 'src/app/utils';
 
 @Injectable({
   providedIn: 'root',

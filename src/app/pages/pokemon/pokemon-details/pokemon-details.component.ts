@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { take } from 'rxjs/operators';
-import { Pokemon, PokemonSpecie } from 'src/app/api/models/pokemon';
-import { PokemonService } from 'src/app/api/services/pokemon.service';
-import { extractId } from 'src/app/utils';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
+import {take} from 'rxjs/operators';
+import {Pokemon, PokemonSpecie} from 'src/app/api/models/pokemon';
+import {PokemonService} from 'src/app/api/services/pokemon.service';
+import {extractId} from 'src/app/utils';
 
 @Component({
   selector: 'app-pokemon-details',
@@ -29,18 +29,18 @@ export class PokemonDetailsComponent implements OnInit {
   }
 
   public loadData() {
-    const { id } = this.activatedRoute.snapshot.params;
+    const {id} = this.activatedRoute.snapshot.params;
     if (id) {
       this.loading = true;
       this.pokemonService
         .getByID(id)
         .pipe(take(1))
         .subscribe(
-          (response) => {
+          response => {
             this.error = undefined;
 
             if (response) {
-              const { species } = response;
+              const {species} = response;
               const specieId = extractId(species.url);
               this.pokemon = response;
               this.pokemon.height = this.pokemon.height / 10;
@@ -55,7 +55,7 @@ export class PokemonDetailsComponent implements OnInit {
               this.pokemon = undefined;
             }
           },
-          (err) => {
+          err => {
             this.loading = false;
             this.error = err;
             this.pokemon = undefined;
@@ -71,7 +71,7 @@ export class PokemonDetailsComponent implements OnInit {
       .getSpecieByID(specie)
       .pipe(take(1))
       .subscribe(
-        (response) => {
+        response => {
           this.loading = false;
           this.specie = response;
         },

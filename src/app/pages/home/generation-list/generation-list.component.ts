@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { take } from 'rxjs/operators';
-import { GenerationResult } from 'src/app/api/models/generation';
-import { GenerationService } from 'src/app/api/services';
+import {Component, OnInit} from '@angular/core';
+import {take} from 'rxjs/operators';
+import {GenerationResult} from 'src/app/api/models/generation';
+import {GenerationService} from 'src/app/api/services';
 
 @Component({
   selector: 'app-generation-list',
@@ -27,20 +27,20 @@ export class GenerationListComponent implements OnInit {
       .list()
       .pipe(take(1))
       .subscribe(
-        (response) => {
+        response => {
           this.loading = false;
           this.error = undefined;
 
           if (response.results && response.results.length) {
-            this.data = response.results.map((gen) => {
-              const { name, url } = gen;
+            this.data = response.results.map(gen => {
+              const {name, url} = gen;
 
               const parts = name.split('-');
               gen.name = `${parts[0]} ${parts[1].toUpperCase()}`;
 
               const id = url
                 .split('/')
-                .filter((el) => el)
+                .filter(el => el)
                 .reverse()[0];
               gen.id = Number(id);
 
@@ -50,7 +50,7 @@ export class GenerationListComponent implements OnInit {
             this.data = [];
           }
         },
-        (err) => {
+        err => {
           this.loading = false;
           this.data = [];
           this.error = err;
