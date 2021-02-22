@@ -6,6 +6,11 @@ import { catchError } from 'rxjs/operators';
 import { Pokemon, PokemonList, PokemonSpecie } from '../models/pokemon';
 import { handleError } from 'src/app/utils';
 
+interface PokemonListParams {
+  offset?: number;
+  limit?: number;
+}
+
 @Injectable({
   providedIn: 'root',
 })
@@ -14,9 +19,9 @@ export class PokemonService {
 
   constructor(private http: HttpClient) {}
 
-  public list(): Observable<PokemonList> {
+  public list(filters: PokemonListParams): Observable<PokemonList> {
     return this.http
-      .get<PokemonList>(`${this.baseURL}/pokemon`)
+      .get<PokemonList>(`${this.baseURL}/pokemon`, { params: filters as any })
       .pipe(catchError(handleError));
   }
 
